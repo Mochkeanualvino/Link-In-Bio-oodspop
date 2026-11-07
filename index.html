@@ -32,160 +32,168 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #111827; }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
     </style>
 </head>
-<body class="bg-oddgray-dark text-gray-100 min-h-screen flex flex-col antialiased selection:bg-oddblue selection:text-white pb-16">
+<body class="text-gray-100 min-h-screen flex items-center justify-center antialiased selection:bg-oddblue selection:text-white py-0 sm:py-6 bg-fixed bg-center bg-cover bg-no-repeat" style="background-image: linear-gradient(rgba(17, 24, 39, 0.45), rgba(17, 24, 39, 0.75)), url('bg.jpg');">
 
-    <!-- Top Browser Bar Style -->
-    <div class="sticky top-0 z-30 bg-zinc-900 border-b border-oddgray-border px-4 py-2.5 flex items-center justify-between text-[11px] text-gray-400">
-        <div class="flex items-center gap-1.5 overflow-hidden">
-            <i class="fa-solid fa-lock text-[10px] text-oddblue-light"></i>
-            <span class="truncate tracking-wider">desty.page/oddspop</span>
+    <!-- Container Utama -->
+    <div class="w-full max-w-md min-h-screen sm:min-h-[90vh] bg-transparent sm:border border-oddgray-border flex flex-col shadow-2xl relative sm:rounded-3xl overflow-hidden pb-24">
+
+        <!-- Top Browser Bar Style -->
+        <div class="bg-zinc-900/95 backdrop-blur-md border-b border-oddgray-border px-4 py-2.5 flex items-center justify-between text-[11px] text-gray-400">
+            <div class="flex items-center gap-1.5 overflow-hidden">
+                <i class="fa-solid fa-lock text-[10px] text-oddblue-light"></i>
+                <span class="truncate">desty.page/oddspop</span>
+            </div>
+            <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded font-bold text-[9px]">OPEN</span>
         </div>
-        <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded font-bold text-[9px]">OPEN</span>
+
+        <!-- Scrollable Content Area -->
+        <div class="flex-grow overflow-y-auto">
+
+            <!-- Profile Section -->
+            <div class="px-5 pt-8 pb-6 text-center flex flex-col items-center">
+                <!-- Foto Profil Bulat -->
+                <div class="relative mb-3 drop-shadow-xl">
+                    <div class="w-24 h-24 rounded-full p-1 bg-white shadow-lg border-2 border-oddgray-border">
+                        <img src="logo.jpg" alt="oddspop avatar" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <span class="absolute bottom-1 right-1 bg-oddblue text-white w-5 h-5 rounded-full flex items-center justify-center text-[10px] shadow" title="Verified">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+                </div>
+
+                <h1 class="text-xl font-black text-white tracking-tight flex items-center gap-1.5 drop-shadow-lg">
+                    oddspop
+                </h1>
+                <p class="text-xs text-oddblue-light font-bold mt-0.5 drop-shadow-md">Coffee & Thriftshop</p>
+                <p class="text-xs text-gray-200 mt-2 max-w-xs leading-relaxed drop-shadow-md font-medium">
+                    Ruang santai kasual • Seduhan kopi nikmat & koleksi vintage handpicked di Bojongherang, Cianjur.
+                </p>
+            </div>
+
+            <!-- Action Links -->
+            <div class="px-5 space-y-3 mb-6">
+                <button onclick="openWhatsApp()" class="w-full bg-oddblue/95 backdrop-blur-md hover:bg-blue-700 text-white font-extrabold py-3.5 px-4 rounded-xl flex items-center justify-between shadow-lg shadow-oddblue/30 transition active:scale-98 border border-oddblue-light/30">
+                    <span class="flex items-center gap-3">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span class="text-sm drop-shadow-md">WhatsApp Owner</span>
+                    </span>
+                    <i class="fa-solid fa-chevron-right text-xs opacity-60"></i>
+                </button>
+
+                <button onclick="openCatalogModal()" class="w-full bg-oddgray-card/85 backdrop-blur-md border border-white/10 hover:border-oddblue text-white font-bold py-3.5 px-4 rounded-xl flex items-center justify-between transition active:scale-98 shadow-lg">
+                    <span class="flex items-center gap-3">
+                        <i class="fa-solid fa-utensils text-oddblue-light text-lg"></i>
+                        <span class="text-sm drop-shadow-sm">Katalog Menu Kopi & Thrift</span>
+                    </span>
+                    <i class="fa-solid fa-chevron-right text-xs opacity-60"></i>
+                </button>
+
+                <a href="https://instagram.com/oddspop" target="_blank" class="w-full bg-oddgray-card/85 backdrop-blur-md border border-white/10 hover:border-pink-500 text-white font-bold py-3.5 px-4 rounded-xl flex items-center justify-between transition active:scale-98 shadow-lg">
+                    <span class="flex items-center gap-3">
+                        <i class="fa-brands fa-instagram text-pink-400 text-lg drop-shadow-sm"></i>
+                        <span class="text-sm drop-shadow-sm">Instagram @oddspop</span>
+                    </span>
+                    <i class="fa-solid fa-chevron-right text-xs opacity-60"></i>
+                </a>
+
+                <a href="https://www.google.com/maps/search/?api=1&query=-6.812158,107.137586" target="_blank" class="w-full bg-oddgray-card/85 backdrop-blur-md border border-white/10 hover:border-oddblue text-white font-bold py-3.5 px-4 rounded-xl flex items-center justify-between transition active:scale-98 shadow-lg">
+                    <span class="flex items-center gap-3">
+                        <i class="fa-solid fa-location-dot text-red-400 text-lg drop-shadow-sm"></i>
+                        <div class="text-left">
+                            <span class="text-sm block leading-tight drop-shadow-sm">Lokasi Kedai</span>
+                            <span class="text-[10px] text-gray-300 font-normal">Jl. Tanjakan Pala, Cianjur</span>
+                        </div>
+                    </span>
+                    <i class="fa-solid fa-chevron-right text-xs opacity-60"></i>
+                </a>
+            </div>
+
+            <!-- Instagram Grid Gallery -->
+            <div class="px-5 mb-6">
+                <div class="flex items-center justify-between mb-3 bg-oddgray-dark/50 backdrop-blur-sm p-2 rounded-lg border border-white/5">
+                    <span class="text-xs font-bold text-gray-200 uppercase tracking-wider drop-shadow-md">Galeri @oddspop</span>
+                    <a href="https://instagram.com/oddspop" target="_blank" class="text-xs text-oddblue-light font-bold hover:underline drop-shadow-md">Buka IG</a>
+                </div>
+                <div class="grid grid-cols-3 gap-2" id="mobile-ig-grid">
+                    <!-- Javascript will populate -->
+                </div>
+            </div>
+
+            <!-- Info Operasional -->
+            <div class="px-5 mb-16">
+                <div class="bg-zinc-900/85 backdrop-blur-md border border-white/10 rounded-xl p-4 text-xs text-gray-200 space-y-3 shadow-xl">
+                    <div class="flex items-center justify-between">
+                        <span class="text-gray-300"><i class="fa-regular fa-clock mr-1 text-oddblue-light"></i> Jam Buka:</span>
+                        <span class="font-bold text-white drop-shadow-md">15:00 - 23:00 WIB</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-gray-300"><i class="fa-brands fa-whatsapp mr-1 text-emerald-400"></i> No. WA:</span>
+                        <span class="font-bold text-white drop-shadow-md">6289503715551</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Navigation Bar -->
+        <div class="absolute bottom-0 left-0 right-0 bg-oddgray-card/95 backdrop-blur-xl border-t border-oddgray-border px-8 py-3 flex items-center justify-between text-xs font-bold text-gray-400 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] z-20">
+            <a href="#" class="flex flex-col items-center gap-1 text-oddblue-light">
+                <i class="fa-solid fa-house text-sm"></i>
+                <span>Home</span>
+            </a>
+            <button onclick="openCatalogModal()" class="flex flex-col items-center gap-1 hover:text-white transition">
+                <i class="fa-solid fa-utensils text-sm"></i>
+                <span>Katalog</span>
+            </button>
+            <button onclick="openShareModal()" class="flex flex-col items-center gap-1 hover:text-white transition">
+                <i class="fa-solid fa-share-nodes text-sm"></i>
+                <span>Share</span>
+            </button>
+        </div>
+
     </div>
 
-    <!-- Main Content Area -->
-    <main class="w-full max-w-3xl mx-auto flex-grow flex flex-col px-5 pt-8 pb-10">
-        
-        <!-- Profile Section -->
-        <div class="text-center flex flex-col items-center mb-8">
-            <div class="relative mb-4">
-                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1 bg-white shadow-lg border-2 border-oddgray-border">
-                    <img src="https://i.postimg.cc/ZKrjbTLs/840849804-18633937042043279-2579828531467615759-n.jpg" alt="oddspop avatar" class="w-full h-full object-cover rounded-full">
-                </div>
-                <span class="absolute bottom-2 right-2 bg-oddblue text-white w-6 h-6 rounded-full flex items-center justify-center text-xs shadow-lg" title="Verified">
-                    <i class="fa-solid fa-check"></i>
-                </span>
-            </div>
-
-            <h1 class="text-2xl sm:text-3xl font-black text-white tracking-tight flex items-center gap-1.5 uppercase">
-                oddspop
-            </h1>
-            <p class="text-sm text-oddblue-light font-bold mt-1">Coffee & Thriftshop</p>
-            <p class="text-xs sm:text-sm text-gray-400 mt-3 max-w-md mx-auto leading-relaxed">
-                Ruang santai kasual • Seduhan kopi nikmat & koleksi vintage handpicked di Bojongherang, Cianjur.
-            </p>
-        </div>
-
-        <!-- Action Links (Gaya Desty/Linktree Sentral) -->
-        <div class="space-y-4 mb-10 px-1 sm:px-4">
-            
-            <!-- Tombol WhatsApp -->
-            <button onclick="openWhatsApp()" class="relative w-full bg-oddgray-card border border-oddgray-border hover:bg-zinc-800 text-white font-extrabold py-4 rounded-2xl flex items-center justify-center shadow-lg transition active:scale-98">
-                <div class="absolute left-4 bg-[#25D366] w-9 h-9 rounded-lg flex items-center justify-center shadow">
-                    <i class="fa-brands fa-whatsapp text-white text-xl"></i>
-                </div>
-                <span class="text-sm sm:text-base tracking-wide">WhatsApp</span>
-            </button>
-
-            <!-- Tombol Instagram -->
-            <a href="https://instagram.com/oddspop" target="_blank" class="relative w-full bg-oddgray-card border border-oddgray-border hover:bg-zinc-800 text-white font-extrabold py-4 rounded-2xl flex items-center justify-center shadow-lg transition active:scale-98">
-                <div class="absolute left-4 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 w-9 h-9 rounded-lg flex items-center justify-center shadow">
-                    <i class="fa-brands fa-instagram text-white text-xl"></i>
-                </div>
-                <span class="text-sm sm:text-base tracking-wide">Instagram</span>
-            </a>
-
-            <!-- Tombol Katalog -->
-            <button onclick="openCatalogModal()" class="relative w-full bg-oddgray-card border border-oddgray-border hover:bg-zinc-800 text-white font-extrabold py-4 rounded-2xl flex items-center justify-center shadow-lg transition active:scale-98">
-                <div class="absolute left-4 bg-oddblue w-9 h-9 rounded-lg flex items-center justify-center shadow">
-                    <i class="fa-solid fa-utensils text-white text-lg"></i>
-                </div>
-                <span class="text-sm sm:text-base tracking-wide">Katalog Menu & Thrift</span>
-            </button>
-
-            <!-- Tombol Lokasi -->
-            <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Tanjakan+Pala,+Bojongherang,+Cianjur" target="_blank" class="relative w-full bg-oddgray-card border border-oddgray-border hover:bg-zinc-800 text-white font-extrabold py-4 rounded-2xl flex items-center justify-center shadow-lg transition active:scale-98">
-                <div class="absolute left-4 bg-red-500 w-9 h-9 rounded-lg flex items-center justify-center shadow">
-                    <i class="fa-solid fa-location-dot text-white text-lg"></i>
-                </div>
-                <span class="text-sm sm:text-base tracking-wide">Lokasi Kedai</span>
-            </a>
-            
-        </div>
-
-        <!-- Instagram Grid Gallery -->
-        <div class="mb-10">
-            <div class="flex items-center justify-between mb-4">
-                <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Galeri Instagram @oddspop</span>
-                <a href="https://instagram.com/oddspop" target="_blank" class="text-xs text-oddblue-light font-semibold hover:underline">Buka IG</a>
-            </div>
-            <div class="grid grid-cols-3 sm:grid-cols-6 gap-3" id="mobile-ig-grid">
-                <!-- Javascript will populate -->
-            </div>
-        </div>
-
-        <!-- Info Operasional (Tanpa No WA) -->
-        <div>
-            <div class="bg-zinc-900 border border-oddgray-border rounded-xl p-5 text-sm text-gray-300">
-                <div class="flex items-center justify-between">
-                    <span class="text-gray-400"><i class="fa-regular fa-clock mr-1.5 text-oddblue-light"></i> Jam Buka:</span>
-                    <span class="font-bold text-white">15:00 - 23:00 WIB</span>
-                </div>
-            </div>
-        </div>
-
-    </main>
-
-    <!-- Bottom Navigation Bar -->
-    <div class="fixed bottom-0 left-0 right-0 bg-oddgray-card border-t border-oddgray-border px-4 py-3 flex items-center justify-around text-xs font-bold text-gray-400 shadow-[0_-10px_40px_rgba(0,0,0,0.5)] z-20">
-        <a href="#" class="flex flex-col items-center gap-1.5 text-oddblue-light w-20 text-center">
-            <i class="fa-solid fa-house text-base"></i>
-            <span>Home</span>
-        </a>
-        <button onclick="openCatalogModal()" class="flex flex-col items-center gap-1.5 hover:text-white transition w-20 text-center">
-            <i class="fa-solid fa-utensils text-base"></i>
-            <span>Katalog</span>
-        </button>
-        <button onclick="openShareModal()" class="flex flex-col items-center gap-1.5 hover:text-white transition w-20 text-center">
-            <i class="fa-solid fa-share-nodes text-base"></i>
-            <span>Share</span>
-        </button>
-    </div>
-
-    <!-- CATALOG MODAL -->
-    <div id="catalog-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-end sm:items-center justify-center sm:p-4">
-        <div class="bg-oddgray-card border border-oddgray-border w-full max-w-2xl rounded-t-3xl sm:rounded-2xl max-h-[85vh] flex flex-col overflow-hidden shadow-2xl">
-            <div class="p-5 border-b border-oddgray-border flex items-center justify-between">
+    <!-- MODAL SECTIONS -->
+    <div id="catalog-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-end justify-center">
+        <div class="bg-oddgray-card border-t border-oddgray-border w-full max-w-md rounded-t-3xl max-h-[85vh] flex flex-col overflow-hidden shadow-2xl">
+            <div class="p-4 border-b border-oddgray-border flex items-center justify-between">
                 <div>
-                    <h3 class="font-extrabold text-white text-base sm:text-lg">Katalog Menu & Thrift</h3>
-                    <p class="text-xs text-gray-400 mt-1">Pesan langsung via WhatsApp</p>
+                    <h3 class="font-extrabold text-white text-base">Katalog Menu & Thrift</h3>
+                    <p class="text-[11px] text-gray-400">Pesan langsung via WhatsApp</p>
                 </div>
-                <button onclick="closeCatalogModal()" class="w-9 h-9 rounded-full bg-zinc-800 text-gray-300 hover:text-white flex items-center justify-center text-sm transition">
+                <button onclick="closeCatalogModal()" class="w-8 h-8 rounded-full bg-zinc-800 text-gray-300 hover:text-white flex items-center justify-center text-sm transition">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
-            <div class="p-5 overflow-y-auto flex-grow grid grid-cols-1 sm:grid-cols-2 gap-3" id="modal-catalog-list">
-                <!-- Javascript populated -->
-            </div>
+            <div class="p-4 overflow-y-auto flex-grow space-y-3" id="modal-catalog-list"></div>
         </div>
     </div>
 
-    <!-- SHARE MODAL -->
-    <div id="share-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-end sm:items-center justify-center sm:p-4">
-        <div class="bg-oddgray-card border border-oddgray-border w-full max-w-sm rounded-t-3xl sm:rounded-2xl p-6 shadow-2xl">
-            <div class="flex items-center justify-between mb-5">
+    <div id="share-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-end justify-center">
+        <div class="bg-oddgray-card border-t border-oddgray-border w-full max-w-md rounded-t-3xl p-6 shadow-2xl">
+            <div class="flex items-center justify-between mb-4">
                 <h3 class="font-bold text-white text-base">Bagikan oddspop</h3>
-                <button onclick="closeShareModal()" class="text-gray-400 hover:text-white transition"><i class="fa-solid fa-xmark text-lg"></i></button>
+                <button onclick="closeShareModal()" class="text-gray-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
             </div>
-            <div class="grid grid-cols-4 gap-3 text-center mb-2">
-                <button onclick="shareTo('whatsapp')" class="flex flex-col items-center gap-2 p-3 bg-zinc-900 hover:bg-zinc-800 transition rounded-xl border border-oddgray-border">
+            <div class="grid grid-cols-4 gap-3 text-center mb-4">
+                <button onclick="shareTo('whatsapp')" class="flex flex-col items-center gap-2 p-3 bg-zinc-900 rounded-xl border border-oddgray-border">
                     <i class="fa-brands fa-whatsapp text-2xl text-emerald-400"></i>
                     <span class="text-[10px] text-gray-300">WhatsApp</span>
                 </button>
-                <button onclick="shareTo('line')" class="flex flex-col items-center gap-2 p-3 bg-zinc-900 hover:bg-zinc-800 transition rounded-xl border border-oddgray-border">
+                <button onclick="shareTo('line')" class="flex flex-col items-center gap-2 p-3 bg-zinc-900 rounded-xl border border-oddgray-border">
                     <i class="fa-brands fa-line text-2xl text-green-400"></i>
                     <span class="text-[10px] text-gray-300">LINE</span>
                 </button>
-                <button onclick="shareTo('twitter')" class="flex flex-col items-center gap-2 p-3 bg-zinc-900 hover:bg-zinc-800 transition rounded-xl border border-oddgray-border">
+                <button onclick="shareTo('twitter')" class="flex flex-col items-center gap-2 p-3 bg-zinc-900 rounded-xl border border-oddgray-border">
                     <i class="fa-brands fa-x-twitter text-2xl text-white"></i>
                     <span class="text-[10px] text-gray-300">Twitter/X</span>
                 </button>
-                <button onclick="copyPageLink()" class="flex flex-col items-center gap-2 p-3 bg-zinc-900 hover:bg-zinc-800 transition rounded-xl border border-oddgray-border">
+                <button onclick="copyPageLink()" class="flex flex-col items-center gap-2 p-3 bg-zinc-900 rounded-xl border border-oddgray-border">
                     <i class="fa-solid fa-copy text-2xl text-oddblue-light"></i>
                     <span class="text-[10px] text-gray-300">Salin Link</span>
                 </button>
@@ -193,57 +201,53 @@
         </div>
     </div>
 
-    <!-- TOAST -->
-    <div id="toast" class="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 bg-zinc-900 border border-oddblue text-oddblue-light text-xs font-bold px-4 py-2.5 rounded-xl shadow-2xl opacity-0 transition-opacity pointer-events-none">
+    <div id="toast" class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 bg-zinc-900 border border-oddblue text-oddblue-light text-xs font-bold px-4 py-2 rounded-xl shadow-2xl opacity-0 transition-opacity pointer-events-none">
         Link berhasil disalin!
     </div>
 
     <script>
-        // ==========================================
-        // UBAH NOMOR WHATSAPP ANDA DI SINI
-        // ==========================================
-        const NOMOR_WA = "6289503715551"; 
-        
         const INSTAGRAM_PREVIEWS = [
-            "https://i.postimg.cc/Jnfc8gDp/Vans-epoch-Ukuran-38-24cm-Harga-Second-original-Kode-barang-HBS-719Untuk-order-DM-kami-dengan.webp",
-            "https://i.postimg.cc/50YqZ10X/Handball-spezial-Ukuran-37-5Kondisi-terbaik-Harga-Second-original-Kode-barang-HBS-718Untuk-ord.webp",
-            "https://i.postimg.cc/rm0CvcmK/Trucker-jacket-HNMUkuran-L-on-tag-Warna-Hitam-Kondisi-mulus-sudah-dicuci-bersih-dan-wangi-Terukur.webp",
-            "https://i.postimg.cc/26bFPm6B/Kemeja-boxy-GUUkuran-S-on-tag-Kondisi-mulus-sudah-dicuci-bersih-dan-wangi-Terukur-P-L-66cmx-52cm.webp",
-            "https://i.postimg.cc/bJ7HPMD3/P-6000Ukuran-36-5-23-5cm-Harga-Second-original-Kode-barang-HBS-723Untuk-order-DM-kami-dengan-m.webp",
-            "https://i.postimg.cc/TwLqZGwh/Jaket-Uniklo-mountain-parka-Ukuran-M-on-tag-Warna-Navy-Kondisi-mulus-sudah-dicuci-bersih-dan-wangi.webp"
+            "vans-epoch.webp",
+            "adidas-handball.webp",
+            "jaket-trucker.webp",
+            "kemeja-gu-stripe.webp",
+            "nike-bone.webp",
+            "jaket-parka.webp"
         ];
 
         const PRODUCT_CATALOG = [
-            { name: "Kopi Americano", price: "10.000", cat: "Kopi", img: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=400&q=80" },
-            { name: "Matcha Latte", price: "15.000", cat: "Kopi", img: "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=400&q=80" },
-            { name: "Vans Epoch Black White", price: "320.000", cat: "Thrift", img: "https://i.postimg.cc/Jnfc8gDp/Vans-epoch-Ukuran-38-24cm-Harga-Second-original-Kode-barang-HBS-719Untuk-order-DM-kami-dengan.webp" },
-            { name: "Adidas Handball Spezial", price: "245.000", cat: "Thrift", img: "https://i.postimg.cc/50YqZ10X/Handball-spezial-Ukuran-37-5Kondisi-terbaik-Harga-Second-original-Kode-barang-HBS-718Untuk-ord.webp" },
-            { name: "Trucker Jacket H&M", price: "145.000", cat: "Thrift", img: "https://i.postimg.cc/rm0CvcmK/Trucker-jacket-HNMUkuran-L-on-tag-Warna-Hitam-Kondisi-mulus-sudah-dicuci-bersih-dan-wangi-Terukur.webp" },
-            { name: "Jaket Parka Uniqlo Navy", price: "135.000", cat: "Thrift", img: "https://i.postimg.cc/TwLqZGwh/Jaket-Uniklo-mountain-parka-Ukuran-M-on-tag-Warna-Navy-Kondisi-mulus-sudah-dicuci-bersih-dan-wangi.webp" }
+            { name: "Kopi Americano", cat: "Kopi", img: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=400&q=80" },
+            { name: "Matcha Latte", cat: "Kopi", img: "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=400&q=80" },
+            { name: "Vans Epoch Black White", cat: "Thrift", img: "vans-epoch.webp" },
+            { name: "Adidas Handball Spezial", cat: "Thrift", img: "adidas-handball.webp" },
+            { name: "Trucker Jacket H&M", cat: "Thrift", img: "jaket-trucker.webp" },
+            { name: "Jaket Parka Uniqlo Navy", cat: "Thrift", img: "jaket-parka.webp" }
         ];
 
+        // Nomor WA sekarang dikunci paten, tidak bisa diubah oleh pengunjung
+        const OWNER_WA = "6289503715551"; 
+
         function openWhatsApp(msg = "Halo kak, saya mau pesan produk dari oddspop.") {
-            window.open(`https://wa.me/${NOMOR_WA}?text=${encodeURIComponent(msg)}`, '_blank');
+            window.open(`https://wa.me/${OWNER_WA}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
         function renderMobileIG() {
             document.getElementById('mobile-ig-grid').innerHTML = INSTAGRAM_PREVIEWS.map(img => `
-                <a href="https://instagram.com/oddspop" target="_blank" class="aspect-square rounded-lg overflow-hidden bg-zinc-900 border border-oddgray-border block">
-                    <img src="${img}" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                <a href="https://instagram.com/oddspop" target="_blank" class="aspect-square rounded-lg overflow-hidden bg-zinc-900 border border-oddgray-border block shadow-md">
+                    <img src="${img}" class="w-full h-full object-cover hover:scale-105 transition">
                 </a>
             `).join('');
         }
 
         function renderModalCatalog() {
             document.getElementById('modal-catalog-list').innerHTML = PRODUCT_CATALOG.map(p => `
-                <div class="flex items-center gap-3 bg-zinc-900 border border-oddgray-border p-3 rounded-xl">
-                    <img src="${p.img}" class="w-16 h-16 object-cover rounded-lg bg-white/5">
+                <div class="flex items-center gap-3 bg-zinc-900/90 border border-oddgray-border p-2.5 rounded-xl shadow-sm">
+                    <img src="${p.img}" class="w-14 h-14 object-cover rounded-lg">
                     <div class="flex-grow">
-                        <span class="text-[10px] font-bold text-oddblue-light uppercase">${p.cat}</span>
-                        <h4 class="font-bold text-white text-sm mt-0.5">${p.name}</h4>
-                        <span class="text-xs font-extrabold text-gray-300 block mt-1">Rp ${p.price}</span>
+                        <span class="text-[9px] font-bold text-oddblue-light uppercase">${p.cat}</span>
+                        <h4 class="font-bold text-white text-xs mt-0.5">${p.name}</h4>
                     </div>
-                    <button onclick="openWhatsApp('Halo kak, saya mau pesan ${p.name} (Rp ${p.price})')" class="bg-oddblue text-white text-xs font-bold px-3.5 py-2.5 rounded-xl hover:bg-blue-700 transition">Pesan</button>
+                    <button onclick="openWhatsApp('Halo kak, saya mau pesan ${p.name}')" class="bg-oddblue text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-blue-700">Pesan</button>
                 </div>
             `).join('');
         }
@@ -271,9 +275,7 @@
             setTimeout(() => toast.style.opacity = '0', 2000);
         }
 
-        window.onload = () => { 
-            renderMobileIG(); 
-        }
+        window.onload = () => { renderMobileIG(); }
     </script>
 </body>
 </html>
