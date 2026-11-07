@@ -37,16 +37,17 @@
         ::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
     </style>
 </head>
-<body class="text-gray-100 min-h-screen flex items-center justify-center antialiased selection:bg-oddblue selection:text-white py-0 sm:py-6 bg-fixed bg-center bg-cover bg-no-repeat" style="background-image: linear-gradient(rgba(17, 24, 39, 0.45), rgba(17, 24, 39, 0.75)), url('bg.jpg');">
+<!-- Perubahan utama di tag body: Di laptop background dipusatkan dan diberi warna gelap di sisi luar -->
+<body class="text-gray-100 min-h-screen flex items-center justify-center antialiased selection:bg-oddblue selection:text-white py-0 sm:py-6 bg-[#0b0f19] sm:bg-[image:linear-gradient(rgba(17,24,39,0.5),rgba(17,24,39,0.8)),url('bg.jpg')] bg-fixed bg-center bg-cover bg-no-repeat">
 
-    <!-- Container Utama -->
-    <div class="w-full max-w-md min-h-screen sm:min-h-[90vh] bg-transparent sm:border border-oddgray-border flex flex-col shadow-2xl relative sm:rounded-3xl overflow-hidden pb-24">
+    <!-- Container Utama: Di laptop dibatasi lebarnya dan diberi efek bayangan agar mirip frame HP -->
+    <div class="w-full max-w-md min-h-screen sm:min-h-[85vh] sm:h-[88vh] bg-zinc-950/80 sm:bg-zinc-950/90 sm:bg-[image:linear-gradient(rgba(17,24,39,0.6),rgba(17,24,39,0.9)),url('bg.jpg')] sm:bg-cover sm:bg-center sm:bg-no-repeat sm:border border-oddgray-border flex flex-col shadow-2xl relative sm:rounded-3xl overflow-hidden pb-24">
 
         <!-- Top Browser Bar Style -->
         <div class="bg-zinc-900/95 backdrop-blur-md border-b border-oddgray-border px-4 py-2.5 flex items-center justify-between text-[11px] text-gray-400">
             <div class="flex items-center gap-1.5 overflow-hidden">
                 <i class="fa-solid fa-lock text-[10px] text-oddblue-light"></i>
-                <span class="truncate">Link-In-Bio/oddspop</span>
+                <span class="truncate">desty.page/oddspop</span>
             </div>
             <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded font-bold text-[9px]">OPEN</span>
         </div>
@@ -224,7 +225,6 @@
             { name: "Jaket Parka Uniqlo Navy", cat: "Thrift", img: "jaket-parka.webp" }
         ];
 
-        // Nomor WA sekarang dikunci paten, tidak bisa diubah oleh pengunjung
         const OWNER_WA = "6289503715551"; 
 
         function openWhatsApp(msg = "Halo kak, saya mau pesan produk dari oddspop.") {
